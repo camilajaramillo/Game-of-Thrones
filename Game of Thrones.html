@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOT</title>
+    <link rel="stylesheet" href="Got.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(document).on('click','img', function(){
+            var x =$(this).attr("id");
+            $.get("https://anapioficeandfire.com/api/houses/"+x+"/", function(resp){
+                var name = "";
+                name +="<h3>Name: "+ resp.name + "</h3>";
+                $(".name").html("<div>"+name+"</div>");
+            },"json")
+            $.get("https://anapioficeandfire.com/api/houses/"+x+"/", function(resp1){
+                var words = "";
+                words +="<h3>Words: "+ resp1.words + "</h3>";
+                $(".words").html("<div>"+words+"</div>");
+            },"json")
+            $.get("https://anapioficeandfire.com/api/houses/"+x+"/", function(resp2){
+                var titles = "";
+                titles +="<h3>Titles: "+ resp2.titles + "</h3>";
+                $(".titles").html("<div>"+titles+"</div>");
+            },"json")
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="imagenes">
+            <div class="casa"><img src="stark362.jpg" alt="stark" id="362"class="imgC"></div>
+            <div class="casa"><img src="targaryen378.jpg" alt="targaryen" id="378" class="imgC"></div>
+            <div class="casa"><img src="lannister229.jpg" alt="lannister" id="229" class="imgC"></div>
+            <div class="casa"><img src="baratheon16.png" alt="baratheon" id="16" class="imgC"></div>
+        </div>
+        <div class="informacion">
+            <h2>House Details</h2>
+            <div class="name"></div>
+            <div class="words"></div>
+            <div class="titles"></div>
+        </div>
+    </div>
+</body>
+</html>

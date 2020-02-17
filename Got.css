@@ -1,0 +1,19 @@
+.casa{
+    width: 250px;
+    height: 250px;
+    border: solid black;
+    display: inline-block;
+    margin-right: 10px;
+}
+img{
+    width: 249px;
+    height: 249px;
+    border: solid black;
+    display: inline-block;
+}
+
+.informacion{
+    width: 80%;
+    margin-left: 10%;
+    border: solid black 5px;
+}
